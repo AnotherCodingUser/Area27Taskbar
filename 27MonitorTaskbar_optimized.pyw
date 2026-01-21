@@ -75,11 +75,11 @@ def update_menu(count_text):
     try:
         # Update icon and tooltip
         tray_icon.icon = create_tray_icon(count_text)
-        tray_icon.title = f"Roblox Players: {count_text}"
+        tray_icon.title = f"Area 27 Players: {count_text}"
         
         # Update menu
         tray_icon.menu = pystray.Menu(
-            pystray.MenuItem(f"Roblox Players: {count_text}", lambda: None),
+            pystray.MenuItem(f"Area 27 Players: {count_text}", lambda: None),
             pystray.MenuItem("Exit", on_quit)
         )
     except Exception as e:
@@ -113,12 +113,12 @@ def show_in_tray():
     global tray_icon
     
     menu = pystray.Menu(
-        pystray.MenuItem(f"Roblox Players: {current_count}", lambda: None),
+        pystray.MenuItem(f"Area 27 Players: {current_count}", lambda: None),
         pystray.MenuItem("Exit", on_quit)
     )
     
     icon_image = create_tray_icon(current_count)
-    tray_icon = pystray.Icon("Roblox Counter", icon_image, menu=menu)
+    tray_icon = pystray.Icon("Area 27 Counter", icon_image, menu=menu)
     tray_icon.run()
 
 
@@ -126,11 +126,11 @@ def main():
     """Initialize and run the application."""
     global root
     
-    print("Starting Roblox Player Counter...")
+    print("Starting Area 27 Player Counter...")
 
     # Create hidden Tkinter window for event loop
     root = tk.Tk()
-    root.title("Roblox Player Counter")
+    root.title("Area 27 Player Counter")
     root.withdraw()
 
     # Start tray icon in background thread
